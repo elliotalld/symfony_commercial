@@ -1,0 +1,36 @@
+{% extends 'template.html.twig' %}
+
+
+{% block body %}
+
+ <div class ="container">
+            <div class ="panel panel-primary">
+                <div class ="panel-heading">
+                <h3>Modifier Famille </h3>
+            </div>
+             
+                <div class ="panel-body">
+       
+
+{{ form_start(formf) }}
+
+<div class="form-group col-md-6">
+
+
+
+       {{ form_row(formf.libelle, {'label' :"Libelle"  }) }}
+            {{ form_errors(formf.libelle) }}
+              {{ form_widget(formf.libelle) }}
+
+</div>
+
+<div class="col-md-8">
+      <input type="submit" class="btn btn-primary" value="Modifier"/>
+  
+ <a href ="/famille/liste" class="btn btn-warning">Retour</a> 
+
+</div>
+
+
+{{ form_end(formf) }}
+{% endblock %}

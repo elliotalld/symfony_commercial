@@ -1,0 +1,33 @@
+{% extends 'template.html.twig' %}
+
+
+{% block body %}
+    <h1>Famille Liste</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libelle</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for fam in famille %}
+            <tr>
+                <td>{{ fam.id }}</td>
+                <td>{{ fam.libelle }}</td>
+                <td>
+                   
+                    <a href="/famille/edit/{{ fam.id }}">modifier</a>
+                    <br>
+                    <a href="/famille/delete/{{fam.id }}">supprimer</a>
+                </td>
+            </tr>
+     
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('add_famille') }}">Créer nouvelle famille  </a>
+{% endblock %}
